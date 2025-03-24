@@ -23,7 +23,7 @@ int main(){
         printf("Imagem Colorida\n--------------------\n[A]rmazenar\n[E]xibir\n[S]air\n--------------------\nOpcao: ");
         scanf(" %c", &opcao);
         if (opcao == 'A'){
-            arq = fopen("imagem.bin", "ab");
+            arq = fopen("imagem.bin", "wb");
             if (arq == NULL) {
                 perror("Erro ao abrir o arquivo imagem.bin");
                 return 1;
@@ -94,7 +94,7 @@ int main(){
             for (i = 0; i < altura; i++){
                 free(aux[i]);
             }
-            
+
             free(aux);
             fclose(arq);
         }
